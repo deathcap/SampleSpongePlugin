@@ -25,11 +25,13 @@ public class MyPlugin {
 
     @Subscribe
     public void onPreInit(PreInitializationEvent event) {
+        System.out.println("SampleSpongePlugin preinitializing! "+event);
         // Perform initialization tasks here
     }
 
     @Subscribe
     public void disable(ServerStoppingEvent event) {
+        System.out.println("SampleSpongePlugin disabling");
         // Perform shutdown tasks here
     }
 }
