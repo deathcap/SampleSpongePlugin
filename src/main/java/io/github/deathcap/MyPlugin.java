@@ -20,7 +20,7 @@ public class MyPlugin {
     // These are all injected on plugin load for users to work from
     @Inject private Logger logger;
     // Give us a configuration to work from
-    @Inject @DefaultConfig(sharedRoot = true) private ConfigurationLoader<CommentedConfigurationNode> configLoader;
+    //@Inject @DefaultConfig(sharedRoot = true) private ConfigurationLoader<CommentedConfigurationNode> configLoader;
     @Inject private Game game;
 
     @Subscribe
