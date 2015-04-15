@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.deathcap</groupId>
   <artifactId>SampleSpongePlugin</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.1-SNAPSHOT</version>
   <name>SampleSpongePlugin</name>
   <description>A one-line description of this Sponge plugin</description>
   <properties>
