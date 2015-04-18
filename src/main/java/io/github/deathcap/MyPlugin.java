@@ -5,6 +5,7 @@ import ninja.leaping.configurate.commented.CommentedConfigurationNode;
 import ninja.leaping.configurate.loader.ConfigurationLoader;
 import org.slf4j.Logger;
 import org.spongepowered.api.Game;
+import org.spongepowered.api.event.block.BlockBreakEvent;
 import org.spongepowered.api.event.state.PreInitializationEvent;
 import org.spongepowered.api.event.state.ServerStoppingEvent;
 import org.spongepowered.api.plugin.Plugin;
@@ -33,5 +34,12 @@ public class MyPlugin {
     public void disable(ServerStoppingEvent event) {
         System.out.println("SampleSpongePlugin disabling");
         // Perform shutdown tasks here
+    }
+
+    @Subscribe
+    public void onBlockBreak(BlockBreakEvent event) {
+        System.out.println("SampleSpongePlugin BlockBreakEvent: "+event);
+        System.out.println(" block: " + event.getBlock());
+        System.out.println(" block: " + event.getBlock().getBlockX()+","+event.getBlock().getBlockY()+","+event.getBlock().getBlockZ());
     }
 }
