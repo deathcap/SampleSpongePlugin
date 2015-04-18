@@ -41,5 +41,9 @@ public class MyPlugin {
         System.out.println("SampleSpongePlugin BlockBreakEvent: "+event);
         System.out.println(" block: " + event.getBlock());
         System.out.println(" block: " + event.getBlock().getBlockX()+","+event.getBlock().getBlockY()+","+event.getBlock().getBlockZ());
+        if (event.getBlock().getBlockX() == -126) {
+            System.out.println(" cancelled");
+            event.setCancelled(true);
+        }
     }
 }
