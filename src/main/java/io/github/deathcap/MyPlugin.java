@@ -6,6 +6,7 @@ import ninja.leaping.configurate.loader.ConfigurationLoader;
 import org.slf4j.Logger;
 import org.spongepowered.api.Game;
 import org.spongepowered.api.event.block.BlockBreakEvent;
+import org.spongepowered.api.event.block.BlockPlaceEvent;
 import org.spongepowered.api.event.state.PreInitializationEvent;
 import org.spongepowered.api.event.state.ServerStoppingEvent;
 import org.spongepowered.api.plugin.Plugin;
@@ -45,5 +46,12 @@ public class MyPlugin {
             System.out.println(" cancelled");
             event.setCancelled(true);
         }
+    }
+
+    @Subscribe
+    public void onBlockPlace(BlockPlaceEvent event) {
+        System.out.println("SampleSpongePlugin BlockPlaceEvent: "+event);
+        System.out.println(" block: " + event.getBlock().getBlockX()+","+event.getBlock().getBlockY()+","+event.getBlock().getBlockZ());
+        System.out.println(" replacement: "+event.getReplacementBlock());
     }
 }
